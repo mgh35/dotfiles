@@ -2,7 +2,7 @@
 #
 # This is included as a separate file to make it more portable in a couple of respect:
 # - Other systems might be modifying the .bashrc file. Where these aren't univeral settings we don't
-    want those clashing with this file.
+#   want those clashing with this file.
 # - This can also be included in other shells. For example, ZSH.
 
 # Use ag for getting file lists for fzf. This then uses the usual .agignore rules.
@@ -20,7 +20,7 @@ git config --global core.editor "vim"
 HISTSIZE=999999999
 HISTFILESIZE=999999999
 # Appended with each command. This should prevent losing any history on hard restarts.
-export PROMPT_COMMAND='history -a'
+export PROMPT_COMMAND='history -a; $PROMPT_COMMAND'
 # Include timestamp.
 export HISTTIMEFORMAT="%F %T "
 
