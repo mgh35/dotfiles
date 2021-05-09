@@ -1,0 +1,26 @@
+# Common bash settings.
+#
+# This is included as a separate file to make it more portable in a couple of respect:
+# - Other systems might be modifying the .bashrc file. Where these aren't univeral settings we don't
+    want those clashing with this file.
+# - This can also be included in other shells. For example, ZSH.
+
+# Use ag for getting file lists for fzf. This then uses the usual .agignore rules.
+export FZF_DEFAULT_COMMAND='ag -g ""'
+
+# Git
+# Make sure `git push` behaves as expected.
+git config --global push.default current
+# Use vim as the editor
+git config --global core.editor "vim"
+
+# History
+# Keep a full history. It doesn't look like the options for unlimited size are portable, so just set
+# a large value.
+HISTSIZE=999999999
+HISTFILESIZE=999999999
+# Appended with each command. This should prevent losing any history on hard restarts.
+export PROMPT_COMMAND='history -a'
+# Include timestamp.
+export HISTTIMEFORMAT="%F %T "
+

@@ -1,0 +1,98 @@
+" Set the leader
+nnoremap <SPACE> <NOP>
+let mapleader="\<SPACE>"
+
+" Syntax
+syntax on
+
+" Use visual bell instead of beeping
+set visualbell
+
+" Turn of compatibility
+set nocompatible
+
+" Menu
+set wildmenu
+
+" Numbering
+set number
+set relativenumber
+
+" Status Line
+set laststatus=2
+set showcmd
+
+" Searching
+set path+=**
+set wildignore+=**/node_modules/**
+set wildignore+=**/third_party/**
+set wildignore+=**/static/**
+
+" Tab settings
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+" Unsaved buffers
+set hidden
+
+" Line length rule
+set colorcolumn=100
+:highlight ColorColumn ctermbg=128
+
+" Key mappings
+" Get a better <ESC>
+inoremap jj <ESC>
+"Keep split when deleting buffer
+nnoremap <LEADER>bd :bp\|bd #<CR>
+" Make window keys work under browser which hijacks C-W
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
+nnoremap <C-H> <C-W>h
+" Get back the file finder
+nnoremap <C-P> :Files<CR>
+" Open NERDTree at the current file
+nnoremap <C-O> :NERDTreeFind<CR>
+
+" Commands
+" Close all buffers
+command -bar CloseAllBuffers bufdo bd
+" Reset the session
+command Reset CloseAllBuffers | !./git_wrap.py pull
+
+" Plugins
+if empty(glob("~/.vim/autoload/plug.vim"))
+    silent execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+" File Tree
+Plug 'preservim/nerdtree'
+" File Finding
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+" Status Line
+Plug 'itchyny/lightline.vim'
+" Git
+Plug 'tpope/vim-fugitive'
+" Ag
+Plug 'rking/ag.vim'
+" Commenting
+Plug 'scrooloose/nerdcommenter'
+call plug#end()
+
+" Plugin config
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+ 
+
+
+" Colour scheme
+set t_Co=256
+
