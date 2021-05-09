@@ -17,10 +17,10 @@ git config --global core.editor "vim"
 # History
 # Keep a full history. It doesn't look like the options for unlimited size are portable, so just set
 # a large value.
-HISTSIZE=999999999
-HISTFILESIZE=999999999
+export HISTSIZE=999999999
+export HISTFILESIZE=999999999
 # Appended with each command. This should prevent losing any history on hard restarts.
-export PROMPT_COMMAND='history -a; $PROMPT_COMMAND'
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # Include timestamp.
 export HISTTIMEFORMAT="%F %T "
 
