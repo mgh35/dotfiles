@@ -53,7 +53,7 @@ nnoremap <C-H> <C-W>h
 " Get back the file finder
 nnoremap <C-P> :Files<CR>
 " Open NERDTree at the current file
-nnoremap <C-O> :NERDTreeFind<CR>
+nnoremap <LEADER>p :NERDTreeFind<CR>
 
 " Commands
 " Close all buffers
