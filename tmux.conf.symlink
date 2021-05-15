@@ -1,1 +1,6 @@
+# Turn off repeats. <C-B><UpArrow>, <UpArrow> should not move me up a second time. I probably want
+# to go up in my history on the new terminal. 
 set-option -g repeat-time 0
+
+# Force 256 colour term
+set -g default-terminal "xterm-256color"
