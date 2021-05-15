@@ -89,15 +89,27 @@ Plug 'nanotech/jellybeans.vim'
 " Language server
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
+" Autocomplete
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 call plug#end()
 
 " Plugin config
+" NERDCommenter
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
- 
+" Asyncomplete
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+" LSP
+nmap <LEADER>gd :LspDefinition<cr>
+nmap <LEADER>gs :rightbelow LspDefinition<cr>
+nmap <LEADER>gv :rightbelow vertical LspDefinition<cr>
+
 " Colour scheme
 " set t_Co=256
 :colorscheme jellybeans
