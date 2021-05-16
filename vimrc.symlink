@@ -34,6 +34,9 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
+" Enable backspace
+set backspace=indent,eol,start
+
 " Try to use the system clipboard
 set clipboard=unnamed
 
