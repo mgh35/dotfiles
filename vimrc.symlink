@@ -49,10 +49,10 @@ inoremap jj <ESC>
 "Keep split when deleting buffer
 nnoremap <LEADER>bd :bp\|bd #<CR>
 " Make window keys work under browser which hijacks C-W
-nnoremap <C-J> <C-W>j
-nnoremap <C-K> <C-W>k
-nnoremap <C-L> <C-W>l
-nnoremap <C-H> <C-W>h
+noremap <C-J> <C-W>j
+noremap <C-K> <C-W>k
+noremap <C-L> <C-W>l
+noremap <C-H> <C-W>h
 " Get back the file finder
 nnoremap <C-P> :Files<CR>
 " Open NERDTree at the current file
