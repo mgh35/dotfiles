@@ -92,6 +92,8 @@ Plug 'mattn/vim-lsp-settings'
 " Autocomplete
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Vimspector (Debugger)
+Plug 'puremourning/vimspector'
 call plug#end()
 
 " Plugin config
@@ -109,6 +111,18 @@ inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 nmap <LEADER>gd :LspDefinition<cr>
 nmap <LEADER>gs :rightbelow LspDefinition<cr>
 nmap <LEADER>gv :rightbelow vertical LspDefinition<cr>
+" Vimspector
+let g:vimspector_enable_mappings = 'HUMAN'
+nnoremap <LEADER>dd :call vimspector#Launch()<CR>
+nnoremap <LEADER>dx :VimspectorReset<CR>
+nnoremap <LEADER>de :VimspectorEval
+nnoremap <LEADER>dw :VimspectorWatch
+nmap <LEADER>dc <PLUG>VimspectorContinue
+nmap <LEADER>ds <PLUG>VimspectorStop
+nmap <LEADER>db <PLUG>VimspectorToggleBreakpoint
+nmap <LEADER>di <PLUG>VimspectorStepInto
+nmap <LEADER>do <PLUG>VimspectorStepOver
+nmap <LEADER>du <PLUG>VimspectorStepOut
 
 " Colour scheme
 " set t_Co=256
