@@ -56,10 +56,6 @@ noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
 noremap <C-L> <C-W>l
 noremap <C-H> <C-W>h
-" Get back the file finder
-nnoremap <C-P> :Files<CR>
-" Open NERDTree at the current file
-nnoremap <LEADER>p :NERDTreeFind<CR>
 
 " Commands
 " Close all buffers
@@ -98,24 +94,41 @@ Plug 'puremourning/vimspector'
 call plug#end()
 
 " Plugin config
+
+" FZF
+" Get back the file finder
+nnoremap <C-P> :Files<CR>
+
+" NERDTree
+" Open NERDTree at the current file
+nnoremap <LEADER>p :NERDTreeFind<CR>
+
 " NERDCommenter
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
+
 " Asyncomplete
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <CR>    pumvisible() ? asyncomplete#close_popup() : "\<CR>"
+
 " LSP
+" 'g' for go
 nmap <LEADER>gd :LspDefinition<CR>
 nmap <LEADER>gs :rightbelow LspDefinition<CR>
 nmap <LEADER>gv :rightbelow vertical LspDefinition<CR>
 nmap <LEADER>ge :LspNextError<CR>
 nmap <LEADER>gw :LspNextWarning<CR>
 nmap <LEADER>gf :LspNextDiagnostic<CR>
+" 'f' for fix
 nmap <LEADER>ff :LspCodeActionSync<CR>
+nmap <LEADER>fr :LspRename<CR>
+" 's' for show
+nmap <LEADER>sf :LspDocumentDiagnostics<CR>
+
 " Vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
 nnoremap <LEADER>dd :call vimspector#Launch()<CR>
