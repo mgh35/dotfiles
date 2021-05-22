@@ -64,8 +64,6 @@ nnoremap <LEADER>p :NERDTreeFind<CR>
 " Commands
 " Close all buffers
 command -bar CloseAllBuffers bufdo bd
-" Reset the session
-command Reset CloseAllBuffers | !./git_wrap.py pull
 
 " Plugins
 if empty(glob("~/.vim/autoload/plug.vim"))
@@ -131,3 +129,7 @@ nmap <LEADER>du <PLUG>VimspectorStepOut
 " set t_Co=256
 :colorscheme jellybeans
 
+" Source a local vimrc if it exists
+if filereadable(expand("~/.vimrc.custom"))
+    source ~/.vimrc.custom
+endif
