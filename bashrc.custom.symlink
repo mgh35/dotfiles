@@ -6,7 +6,7 @@
 # - This can also be included in other shells. For example, ZSH.
 
 # Use ag for getting file lists for fzf. This then uses the usual .agignore rules.
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 
 # Git
 # Make sure `git push` behaves as expected.
