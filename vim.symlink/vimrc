@@ -5,6 +5,9 @@ let mapleader="\<SPACE>"
 " Syntax
 syntax on
 
+" Enable filetype plugin
+filetype plugin on
+
 " Use visual bell instead of beeping
 set visualbell
 
