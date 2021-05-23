@@ -123,6 +123,7 @@ nmap <LEADER>gv :rightbelow vertical LspDefinition<CR>
 nmap <LEADER>ge :LspNextError<CR>
 nmap <LEADER>gw :LspNextWarning<CR>
 nmap <LEADER>gf :LspNextDiagnostic<CR>
+nmap <LEADER>gr :LspNextReference<CR>
 " 'f' for fix
 nmap <LEADER>ff :LspCodeActionSync<CR>
 nmap <LEADER>fr :LspRename<CR>
