@@ -1,3 +1,6 @@
 # Editor artifacts
-*.swp
-*.swo
+*.sw[klmnop]
+
+# VIM artifacts
+vim.symlink/plugged/
+vim.symlink/autoload/

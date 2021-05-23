@@ -10,7 +10,13 @@ do
     filepath=$PWD/$filename
     symlink_filepath=~/.$(echo $filename | sed 's/.symlink$//')
     echo "Setting symlink to dotfile ${symlink_filepath} ($filename)"
-    rm -f $symlink_filepath
+    if [ -L $symlink_filepath ]
+    then
+        rm $symlink_filepath
+    elif [ -e $symlink_filepath ]
+    then
+        mv $symlink_filepath ${symlink_filepath}.old
+    fi
     ln -s $filepath $symlink_filepath
 done
 
