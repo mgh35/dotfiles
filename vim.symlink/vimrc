@@ -104,7 +104,15 @@ nnoremap <C-P> :Files<CR>
 
 " NERDTree
 " Open NERDTree at the current file
-nnoremap <LEADER>p :NERDTreeFind<CR>
+nnoremap <LEADER>p :call SmartNERDTree()<CR>
+
+function! SmartNERDTree()
+    if @% == ""
+        NERDTreeToggle
+    else
+        NERDTreeFind
+    endif
+endfun
 
 " NERDCommenter
 let g:NERDSpaceDelims = 1
