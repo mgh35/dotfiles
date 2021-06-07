@@ -47,7 +47,7 @@ set clipboard=unnamed
 set hidden
 
 " Line length rule
-set colorcolumn=100
+set colorcolumn=88
 
 " Key mappings
 " Get a better <ESC>
