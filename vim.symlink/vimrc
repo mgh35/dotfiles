@@ -168,6 +168,8 @@ let g:lsp_settings = {
 \     },
 \   },
 \ }
+" Don't display the scratch window preview
+set completeopt-=preview
 
 " Vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
