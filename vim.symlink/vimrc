@@ -98,6 +98,10 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " Vimspector (Debugger)
 Plug 'puremourning/vimspector'
+" Vim Surround
+Plug 'tpope/vim-surround'
+" To support repeating plugin blocks
+Plug 'tpope/vim-repeat'
 call plug#end()
 
 " Plugin config
