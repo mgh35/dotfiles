@@ -49,6 +49,10 @@ set hidden
 " Line length rule
 set colorcolumn=88
 
+" Reload files changed on disk
+set autoread
+au FocusGained,BufEnter * checktime
+
 " Key mappings
 " Get a better <ESC>
 inoremap jj <ESC>
