@@ -17,3 +17,15 @@ then
   setopt PROMPT_SUBST
   PROMPT='%0(?.. %F{red} ⨯ [%?] %f) %F{blue}$(parse_conda_env)%f%F{cyan}$(parse_git_branch)%f%F{green}%1d >%f '
 fi
+
+# Conda
+if [ ! -d ~/git/external/conda-zsh-completion ]
+then
+  git clone https://github.com/esc/conda-zsh-completion ~/git/external/conda-zsh-completion
+fi
+
+fpath+=~/git/external/conda-zsh-completion
+
+
+autoload -Uz compinit
+compinit
