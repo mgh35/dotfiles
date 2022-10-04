@@ -22,5 +22,12 @@ done
 
 # Include the custom BASH file
 BASH_INCLUDE_COMMAND="source ~/.bashrc.custom"
-if [ -e ~/.bashrc ]; then (grep -qxF "$BASH_INCLUDE_COMMAND" ~/.bashrc || echo "$BASH_INCLUDE_COMMAND" >> ~/.bashrc); fi
-if [ -e ~/.zshrc ]; then (grep -qxF "$BASH_INCLUDE_COMMAND" ~/.zshrc || echo "$BASH_INCLUDE_COMMAND" >> ~/.zshrc); fi
+ZSH_INCLUDE_COMMAND="source ~/.zshrc.custom"
+if [ -e ~/.bashrc ];
+then 
+  (grep -qxF "$BASH_INCLUDE_COMMAND" ~/.bashrc || echo "$BASH_INCLUDE_COMMAND" >> ~/.bashrc)
+fi
+if [ -e ~/.zshrc ]; then
+  (grep -qxF "$BASH_INCLUDE_COMMAND" ~/.zshrc || echo "$BASH_INCLUDE_COMMAND" >> ~/.zshrc)
+  (grep -qxF "$ZSH_INCLUDE_COMMAND" ~/.zshrc || echo "$ZSH_INCLUDE_COMMAND" >> ~/.zshrc)
+fi

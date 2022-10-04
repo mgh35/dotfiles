@@ -1,0 +1,19 @@
+# Prompt
+if [[ $SHELL == */zsh ]]
+then
+  function parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+  }
+  
+  function parse_conda_env() {
+    if [[ -z $CONDA_DEFAULT_ENV ]]
+    then 
+      echo ""
+    else
+      echo "[$CONDA_DEFAULT_ENV] "
+    fi
+  }
+   
+  setopt PROMPT_SUBST
+  PROMPT='%0(?.. %F{red} ⨯ [%?] %f) %F{blue}$(parse_conda_env)%f%F{cyan}$(parse_git_branch)%f%F{green}%~ >%f '
+fi
