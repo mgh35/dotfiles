@@ -102,6 +102,8 @@ Plug 'puremourning/vimspector'
 Plug 'tpope/vim-surround'
 " To support repeating plugin blocks
 Plug 'tpope/vim-repeat'
+" Make it easier to insert unicode characters
+Plug 'chrisbra/unicode.vim'
 call plug#end()
 
 " Plugin config
