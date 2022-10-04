@@ -8,9 +8,6 @@
 # Use ag for getting file lists for fzf. This then uses the usual .agignore rules.
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 
-# Make pipenv virtualenvs in the project directory. This is much easier to use with other tools.
-export PIPENV_VENV_IN_PROJECT=1
-
 # Git
 # Make sure `git push` behaves as expected.
 git config --global push.default current
