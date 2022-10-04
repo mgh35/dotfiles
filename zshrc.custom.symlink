@@ -15,5 +15,5 @@ then
   }
    
   setopt PROMPT_SUBST
-  PROMPT='%0(?.. %F{red} ⨯ [%?] %f) %F{blue}$(parse_conda_env)%f%F{cyan}$(parse_git_branch)%f%F{green}%~ >%f '
+  PROMPT='%0(?.. %F{red} ⨯ [%?] %f) %F{blue}$(parse_conda_env)%f%F{cyan}$(parse_git_branch)%f%F{green}%1d >%f '
 fi
