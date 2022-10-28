@@ -23,6 +23,9 @@ export HISTFILESIZE=999999999
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # Include timestamp.
 export HISTTIMEFORMAT="%F %T "
+setopt appendhistory
+setopt INC_APPEND_HISTORY  
+setopt SHARE_HISTORY
 
 # Make sure to run 256 colour.
 # I know we're not supposed to do this. But I don't ever find myself sshing over non-coloured
