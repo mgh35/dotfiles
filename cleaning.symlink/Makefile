@@ -7,4 +7,6 @@ empty:
 
 cleanCaches:
 	ls -d ~/Library/Caches/* | xargs rm -rf || true
+	rm -rf ~/.cache || true
+
 
