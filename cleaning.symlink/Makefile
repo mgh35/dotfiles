@@ -1,4 +1,4 @@
-.PHONY: empty cleanCaches
+.PHONY: empty cleanCaches cleanDocker clean
 
 .DEFAULT_GOAL := empty
 
@@ -7,3 +7,9 @@ empty:
 
 cleanCaches:
 	python3 ./cleanCaches.py
+
+cleanDocker:
+	docker system prune --all --force
+
+
+clean: cleanCaches cleanDocker
