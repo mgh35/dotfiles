@@ -78,3 +78,8 @@ export NVM_DIR="$HOME/.nvm"
 hg () {
   ag "$@" ~/.zsh_history.bak/
 }
+
+# >>> DOTNET SDK initialize >>>
+export DOTNET_ROOT=$HOME/dotnet
+export PATH=$PATH:$HOME/dotnet
+# <<< DOTNET SDK initialize <<<
