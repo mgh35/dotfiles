@@ -80,6 +80,7 @@ hg () {
 }
 
 # >>> DOTNET SDK initialize >>>
-export DOTNET_ROOT=$HOME/dotnet
-export PATH=$PATH:$HOME/dotnet
+export DOTNET_ROOT=/usr/local/share/dotnet
+export PATH=$PATH:/usr/local/share/dotnet
+export PATH=$PATH:/Users/mark/.dotnet/tools
 # <<< DOTNET SDK initialize <<<
