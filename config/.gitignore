@@ -1,0 +1,10 @@
+# IDE
+*.sw[mnop]
+.vscode/
+
+# Python
+.python-version
+.venv*/
+
+# Mac
+.DS_Store

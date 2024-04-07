@@ -2,5 +2,6 @@
 *.sw[klmnop]
 
 # VIM artifacts
-vim.symlink/plugged/
-vim.symlink/autoload/
+.vim/plugged/
+.vim/autoload/
+.vim/.netrwhist
