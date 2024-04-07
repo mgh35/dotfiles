@@ -12,7 +12,7 @@ then
     mv ~/.bashrc ~/${bashrc_backup_name}
 
     echo "Writing new .bashrc"
-    cat > ~/.zshrc <<EOF
+    cat > ~/.bashrc <<EOF
 source $rc_root/common
 source $rc_root/prompt
 # source $rc_root/init_pyenv
