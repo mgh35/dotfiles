@@ -1,3 +1,6 @@
+# Set a variable for the current shell
+export CURRENT_SHELL=$(ps -p "$$" -o comm | tail +2)
+
 # Use ag for getting file lists for fzf. This then uses the usual .agignore rules.
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 
@@ -11,9 +14,12 @@ export HISTFILESIZE=999999999
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # Include timestamp.
 export HISTTIMEFORMAT="%F %T "
-setopt appendhistory
-setopt INC_APPEND_HISTORY  
-setopt SHARE_HISTORY
+if [[ $CURRENT_SHELL == *zsh ]]
+then
+  setopt appendhistory
+  setopt INC_APPEND_HISTORY  
+  setopt SHARE_HISTORY
+fi
 # Shortcut to search backed-up history
 hg () {
   ag "$@" ~/.zsh_history.bak/

@@ -2,7 +2,7 @@ export DOTNET_ROOT=/usr/local/share/dotnet
 export PATH=$PATH:/usr/local/share/dotnet
 export PATH=$PATH:/Users/mark/.dotnet/tools
 
-if [[ $SHELL == */zsh ]]
+if [[ $CURRENT_SHELL == *zsh ]]
 then
     _dotnet_zsh_complete()
     {
