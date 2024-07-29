@@ -37,3 +37,8 @@ stty -ixon
 
 
 export PATH=$PATH:/usr/local/sbin
+
+
+# Utils
+base64url-decode () { awk '{ if (length($0) % 4 == 3) print $0"="; else if (length($0) % 4 == 2) print $0"=="; else print $0; }' | tr -- '-_' '+/' | base64 -d; }
+
