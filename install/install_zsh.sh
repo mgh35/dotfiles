@@ -15,10 +15,10 @@ fi
 echo "Writing new .zshrc"
 cat > ~/.zshrc <<EOF
 source $rc_root/common
+source $rc_root/init_zsh_completions
 # source $rc_root/init_pyenv
 # source $rc_root/init_conda
 # source $rc_root/init_nvm
 # source $rc_root/init_dotnet
-source $rc_root/init_zsh_completions
 source $rc_root/prompt
 EOF
