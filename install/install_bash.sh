@@ -20,5 +20,6 @@ source $rc_root/common
 # source $rc_root/init_nvm
 # source $rc_root/init_dotnet
 # source $rc_root/init_rust
+source $rc_root/init_ocaml
 source $rc_root/prompt
 EOF

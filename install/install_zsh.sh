@@ -20,5 +20,7 @@ source $rc_root/init_zsh_completions
 # source $rc_root/init_conda
 # source $rc_root/init_nvm
 # source $rc_root/init_dotnet
+# source $rc_root/init_rust
+source $rc_root/init_ocaml
 source $rc_root/prompt
 EOF
